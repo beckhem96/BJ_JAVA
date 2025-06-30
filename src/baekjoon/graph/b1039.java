@@ -4,16 +4,37 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class b1039 {
+    static int K, max = -1;
+    static boolean[][] visited;
+
     public static void main(String[] arg) throws IOException {
      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
         String N = st.nextToken();
-        int[] nums = new int[N.length()];
-//        boolean[] visited = new boolean[N.length()];
+//        int[] nums = new int[N.length()];
         int K = Integer.parseInt(st.nextToken());
+        visited = new boolean[K+1][1000001];
+
+        bfs(N);
+        System.out.println(max);
+    }
+
+    static void bfs(String N) {
+        Queue<Pair> q = new LinkedList<>();
+        q.add(new Pair(N, 0));
+
+        while (!q.isEmpty()) {
+            Pair cur = q.poll();
+
+            if (cur.cnt == K) {
+
+            }
+        }
         // N이 한자리 수면 끝
         if (N.length() == 1) {
             System.out.println(-1);
@@ -38,6 +59,15 @@ public class b1039 {
             nums[curIdx] = nums[chgInx];
             nums[chgInx] = tmp;
         }
-        System.out.println(Arrays.toString(nums));
+    }
+
+    static class Pair {
+        String num;
+        int cnt;
+
+        Pair(String num, int cnt) {
+            this.num = num;
+            this.cnt = cnt;
+        }
     }
 }
