@@ -20,6 +20,7 @@ def solve():
         visited  = [[False] * n for _ in range(n)]
         visited[0][0] = True
 
+
         while q:
             r, c = q.popleft()
             if r == n - 1 and c == n - 1:
