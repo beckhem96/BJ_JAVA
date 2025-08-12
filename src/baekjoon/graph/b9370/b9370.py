@@ -58,7 +58,7 @@ def solve():
     result = []
     for x in candidates:
         # s에서 x까지 도달 불가능한 경우는 무시
-        if x not in dist_from_s[x] == INF:
+        if dist_from_s[x] == INF:
             continue
 
         # s -> g -> h -> x 경로의 총 길이 계산
