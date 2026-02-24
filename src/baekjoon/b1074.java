@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 public class b1074 {
     static int count = 0;
-    public static void main(String[] args) throws IOException {
+    public static void main2(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String[] line = br.readLine().split(" ");
 
